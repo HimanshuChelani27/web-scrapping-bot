@@ -15,7 +15,7 @@ import openai
 
 # 1. Web Scraping Functions
 def scrape_with_beautifulsoup(url: str) -> str:
-    """Scrape static webpage content using BeautifulSoup"""
+    
     try:
         response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
         response.raise_for_status()
@@ -29,7 +29,7 @@ def scrape_with_beautifulsoup(url: str) -> str:
         return ""
 
 def scrape_with_selenium(url: str) -> str:
-    """Scrape dynamic webpage content using Selenium"""
+    
     try:
         # Setup Chrome options
         chrome_options = Options()
@@ -62,10 +62,9 @@ def scrape_with_selenium(url: str) -> str:
 
 # 2. Text Processing and Embedding
 def process_text(text: str) -> List[str]:
-    """Split text into chunks"""
-    # Simple sentence splitting (could be enhanced)
+   
     sentences = text.split('. ')
-    # Chunk sentences into manageable pieces (max 512 tokens for most embedding models)
+   
     chunks = []
     current_chunk = ""
     
